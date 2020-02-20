@@ -22,5 +22,5 @@ const komeet = new Komeet();
 ctx.clearRect(0, 0, c.width, c.height);
 ctx.fillStyle = '#000';
 ctx.beginPath();
-// ctx.arc(komeet.pos.x, komeet.pos.y, komeet.diameter, 0, 2 * Math.PI);
+ctx.arc(komeet.pos.x, komeet.pos.y, komeet.diameter, 0, 2 * Math.PI);
 ctx.fill();
