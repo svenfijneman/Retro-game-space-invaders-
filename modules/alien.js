@@ -9,17 +9,17 @@ canvasResize();
 window.addEventListener('resize', canvasResize);
 
 function Komeet(){
-    this.diameter = 100;
+    this.diameter = 25;
     this.snelheid = 5;
     this.pos = {
-        x: 200,
-        y: 200
+        x: 500,
+        y: 100
     }
 }
 
   for (i = 0; i < 10; i++) {
     const komeet = new Komeet();
-    ctx.fillStyle = '#000';
+    ctx.fillStyle = '#ffffff';
     ctx.beginPath();
     ctx.arc(komeet.pos.x + ((komeet.diameter+10)*i*2), komeet.pos.y,komeet.diameter, 0, 2 * Math.PI);
     ctx.fill();
