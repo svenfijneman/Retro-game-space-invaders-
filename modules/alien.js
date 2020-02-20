@@ -16,7 +16,8 @@ function Komeet(){
         y: 100
     }
 }
-
+// extra for loop voor de y-as
+// meerdere rijen van aliens
   for (i = 0; i < 10; i++) {
     const komeet = new Komeet();
     ctx.fillStyle = '#ffffff';
