@@ -1,13 +1,3 @@
-const c = document.querySelector('canvas');
-const ctx = c.getContext('2d');
-
-function canvasResize() {
-    c.width = window.innerWidth;
-    c.height = window.innerHeight;
-}
-canvasResize();
-window.addEventListener('resize', canvasResize);
-
 function Komeet(){
     this.diameter = 25;
     this.snelheid = 5;
@@ -17,14 +7,20 @@ function Komeet(){
     }
 }
 // extra for loop voor de y-as
+
 // meerdere rijen van aliens
-  for (i = 0; i < 10; i++) {
-    const komeet = new Komeet();
-    ctx.fillStyle = '#ffffff';
-    ctx.beginPath();
-    ctx.arc(komeet.pos.x + ((komeet.diameter+10)*i*2), komeet.pos.y,komeet.diameter, 0, 2 * Math.PI);
-    ctx.fill();
-  }
+
+
+
+//eerste rij werkt!!!!
+    for (i = 0; i < 10; i++) {
+      const komeet = new Komeet();
+      ctx.fillStyle = '#ffffff';
+      ctx.beginPath();
+      ctx.arc(komeet.pos.x + ((komeet.diameter+10)*i*2), komeet.pos.y,komeet.diameter, 0, 2 * Math.PI);
+      ctx.fill();
+    }
+
 
 
 
