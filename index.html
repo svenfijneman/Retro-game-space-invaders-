@@ -15,7 +15,27 @@
   <script src="modules/preload.js"></script>
   <script src="modules/player.js"></script>
   <script src="modules/alien.js"></script>
+<script>
+  const keyMap = {};
+  window.addEventListener('keydown', function (e) {
+    keyMap[e.key] = true;
+  })
+  window.addEventListener('keyup', function (e) {
+    keyMap[e.key] = false;
+  })
+  function loop() {
+    ctx.clearRect(0, 0, c.width, c.height);
+    drawComeet();
+    player.speedX = 0;
+    if (keyMap['ArrowLeft'] || keyMap['a'] ) {player.speedX = -7; }
+    if (keyMap['ArrowRight'] || keyMap['d']) {player.speedX = 7; }
+    player.newPos();
+    player.update();
+    requestAnimationFrame(loop);
+  }
+  loop();
 
+</script>
 </body>
 
 </html>
