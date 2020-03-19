@@ -1,5 +1,6 @@
-function Komeet(i){
+function Komeet(i,j){
     this.i = i;
+    this.j = j;
     this.diameter = 25;
     this.snelheid = 5;
     this.pos = {
@@ -11,15 +12,17 @@ function Komeet(i){
 Komeet.prototype.draw = function(){
     ctx.fillStyle = '#ffffff';
     ctx.beginPath();
-    ctx.arc(this.pos.x + ((this.diameter+10)*this.i*2), this.pos.y,this.diameter, 0, 2 * Math.PI);
+    ctx.arc(this.pos.x + ((this.diameter+10)*this.i*2), this.pos.y + ((this.diameter+10)*this.j*2),this.diameter, 0, 2 * Math.PI);
     ctx.fill();
 }
 // extra for loop voor de y-as
 // meerdere rijen van aliens
 
 const cometen = [];
-    for (i = 0; i < 10; i++) {
-      cometen.push(new Komeet(i));
+    for (j = 0; j < 2; j++) {
+        for (i = 0; i < 10; i++) {
+          cometen.push(new Komeet(i,j));
+        }
     }
 
     function drawComeet() {

@@ -12,5 +12,3 @@ function Player(width, height, color, x, y) {
         this.x += this.speedX;
     }
 }
-
-const player = new Player(50, 30, "white", 250, 600);
